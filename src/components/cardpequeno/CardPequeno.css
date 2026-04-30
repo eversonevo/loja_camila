@@ -1,0 +1,69 @@
+.card-base {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centralização vertical total */
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* IMAGEM: Estado Normal (Centralizada e Grande) */
+.card-icon {
+  width: 75px; 
+  height: 75px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+/* TEXTO: Estado Normal (Totalmente neutro) */
+.card-text {
+  font-size: 0px;
+  opacity: 0;
+  line-height: 0; /* Evita que o texto empurre a imagem para cima */
+  margin: 0;      /* Remove qualquer margem inicial */
+  font-weight: 600;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+/* --- QUANDO O CARD É INTERATIVO --- */
+
+.is-hoverable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Transição de encolher imagem */
+.is-hoverable:hover .card-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Transição de mostrar texto */
+.is-hoverable:hover .card-text {
+  font-size: 14px;
+  opacity: 1;
+  line-height: 1.2; /* Restaura a altura da linha */
+  margin-top: 10px;  /* Só aqui o texto ganha "corpo" e empurra a imagem */
+}
+
+/* Garante que se NÃO for interativo, a imagem ignore o espaço do texto */
+.card-base:not(.is-hoverable) .card-wrapper {
+  justify-content: center;
+}

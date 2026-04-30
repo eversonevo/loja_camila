@@ -1,0 +1,105 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 15px;
+  gap: 15px;
+  background-color: #f0f2f5;
+  font-family: sans-serif;
+}
+
+.sidebar { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+
+.sidebar-menu-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  min-height: 250px;
+}
+
+.menu-links { padding: 20px; flex-grow: 1; }
+
+.sidebar-footer-interna {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eee;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+}
+
+.sidebar-bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+
+.content-area { flex-grow: 1; display: flex; flex-direction: column; gap: 15px; }
+
+.header-topo, .card-pequeno, .card-destaque-principal, 
+.card-lateral-medio, .footer-item-largo, .footer-item-curto {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-topo { height: 60px; }
+
+.grid-superior {
+  display: grid;
+  /* Padrão para Celular e telas até 768px: Sempre 2 colunas iguais */
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px;
+}
+
+.card-cliente {
+  flex-direction: column !important;
+  gap: 8px;
+  padding: 10px;
+}
+
+.img-card {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.texto-card {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sessao-central { display: grid; grid-template-columns: 1fr; gap: 15px; flex-grow: 1; }
+
+.card-destaque-principal {
+  min-height: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 992px) {
+  .container-principal { flex-direction: row; padding: 25px; }
+  .sidebar { width: 280px; }
+  .sessao-central { grid-template-columns: 3fr 1fr; }
+}
+
+@media (min-width: 992px) {
+  .grid-superior {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ajuste opcional: Se a tela for MUITO pequena (menos de 320px), 
+   podemos deixar 1 coluna só para não esmagar os cards */
+@media (max-width: 350px) {
+  .grid-superior {
+    grid-template-columns: 1fr;
+  }
+}

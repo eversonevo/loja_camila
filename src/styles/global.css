@@ -1,0 +1,26 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#dde1eb;
+  color:white;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.page{
+  padding:40px;
+}
