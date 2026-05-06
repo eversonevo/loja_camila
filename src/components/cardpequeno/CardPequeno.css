@@ -1,13 +1,13 @@
 .card-base {
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-card);
   min-height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all var(--transition-bounce);
   cursor: pointer;
   overflow: hidden;
 }
@@ -16,54 +16,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centralização vertical total */
+  justify-content: center;
   width: 100%;
   height: 100%;
-  transition: all 0.3s ease;
 }
 
-/* IMAGEM: Estado Normal (Centralizada e Grande) */
 .card-icon {
   width: 75px; 
   height: 75px;
   object-fit: contain;
-  transition: all 0.4s ease;
-  display: block;
+  transition: all var(--transition-smooth);
 }
 
-/* TEXTO: Estado Normal (Totalmente neutro) */
 .card-text {
   font-size: 0px;
   opacity: 0;
-  line-height: 0; /* Evita que o texto empurre a imagem para cima */
-  margin: 0;      /* Remove qualquer margem inicial */
+  line-height: 0;
   font-weight: 600;
-  color: #007bff;
-  transition: all 0.3s ease;
+  color: var(--primary-color);
+  transition: all var(--transition-smooth);
 }
 
-/* --- QUANDO O CARD É INTERATIVO --- */
-
+/* Lógica de Hover (Ação do Widget) */
 .is-hoverable:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
 }
 
-/* Transição de encolher imagem */
 .is-hoverable:hover .card-icon {
   width: 40px;
   height: 40px;
 }
 
-/* Transição de mostrar texto */
 .is-hoverable:hover .card-text {
   font-size: 14px;
   opacity: 1;
-  line-height: 1.2; /* Restaura a altura da linha */
-  margin-top: 10px;  /* Só aqui o texto ganha "corpo" e empurra a imagem */
-}
-
-/* Garante que se NÃO for interativo, a imagem ignore o espaço do texto */
-.card-base:not(.is-hoverable) .card-wrapper {
-  justify-content: center;
+  line-height: 1.2;
+  margin-top: 10px;
 }

@@ -1,26 +1,23 @@
+@import './variables.css';
+@import '../../src/layout/GridSuperior.css'; /* Adicione esta linha! */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  background:#dde1eb;
-  color:white;
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-.page{
-  padding:40px;
+/* Utilitário para centralizar coisas rápido (como o Center do Flutter) */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

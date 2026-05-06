@@ -1,0 +1,21 @@
+:root {
+  /* Cores */
+  --primary-color: #007bff;
+  --bg-main: #f0f2f5;
+  --bg-card: #ffffff;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #cccccc;
+
+  /* Medidas */
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+  /* Animações */
+  --transition-bounce: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-smooth: 0.3s ease;
+}

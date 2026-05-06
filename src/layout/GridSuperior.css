@@ -1,0 +1,22 @@
+/* Este arquivo define apenas a MALHA (Grid) */
+.layout-grid-superior {
+  display: grid;
+  /* Mobile: 2 colunas */
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px;
+  width: 100%;
+}
+
+/* Desktop: 4 colunas */
+@media (min-width: 992px) {
+  .layout-grid-superior {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Opcional: Telas muito pequenas (ex: iPhone SE) - 1 coluna */
+@media (max-width: 350px) {
+  .layout-grid-superior {
+    grid-template-columns: 1fr;
+  }
+}
